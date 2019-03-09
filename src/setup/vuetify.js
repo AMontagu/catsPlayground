@@ -1,4 +1,5 @@
 import Vue from "vue";
+import 'vuetify/dist/vuetify.min.css';
 import Vuetify, {
   VApp, // required
   VNavigationDrawer,

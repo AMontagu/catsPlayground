@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-layout row wrap>
-      <v-flex v-for="cat in cats" :key="cat.id" xs12 sm6 md4 lg3>
+      <v-flex v-for="cat in catByOrigin" :key="cat.id" xs12 sm6 md4 lg3>
         <CatCard
           :name="cat.name"
           :thumbnail="cat.thumbnail"
@@ -31,7 +31,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("cats/", ["cats"])
+    ...mapGetters("cats/", ["catByOrigin"])
   },
   async created() {
     await this.fetchCats();

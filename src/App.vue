@@ -1,14 +1,6 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span class="font-weight-light">THE CAT WEBSITE</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn>
-        <span class="mr-2">FILTRE</span>
-      </v-btn>
-    </v-toolbar>
+    <Toolbar/>
 
     <v-content>
       <router-view />
@@ -17,12 +9,16 @@
 </template>
 
 <script>
+import Toolbar from '@/components/Toolbar.vue'
 export default {
   name: "App",
+  components: {
+  	Toolbar,
+  },
   data() {
     return {
       //
     };
-  }
+  },
 };
 </script>

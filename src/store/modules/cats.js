@@ -27,15 +27,24 @@ async function getCatDetails(cat) {
 }
 
 const state = {
-  cats: []
+  cats: [],
+  originFilter: null,
 };
 
 const getters = {
   cats: state => state.cats,
-  catById: (state) => (id) => {
-    return state.cats.find( cat => {
-      return cat.id === id
-    })
+  catById: state => id => {
+    return state.cats.find(cat => {
+      return cat.id === id;
+    });
+  },
+  catOrigins: state => [...new Set(state.cats.map(item => item.origin))],
+  catByOrigin: state => {
+    console.log("icic", state.originFilter);
+    if (!state.originFilter) {
+      return state.cats;
+    }
+    return state.cats.filter(cat => cat.origin === state.originFilter);
   }
 };
 
@@ -70,6 +79,9 @@ const actions = {
 const mutations = {
   setCatsArray(state, cats) {
     state.cats = cats;
+  },
+	setCatOriginFilter(state, filter) {
+    state.originFilter = filter;
   }
 };
 

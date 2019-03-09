@@ -42,12 +42,12 @@ export default {
     ...mapGetters("cats/", ["catById"]),
     currentCat() {
       return this.catById(this.catId);
-    },
+    }
   },
-	methods: {
-		goToHome() {
-			this.$router.push({name: "Home"});
-		}
-	}
+  methods: {
+    goToHome() {
+      this.$router.push({ name: "Home" });
+    }
+  }
 };
 </script>

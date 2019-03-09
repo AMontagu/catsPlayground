@@ -29,19 +29,19 @@ export default {
       type: String,
       required: true
     },
-	  id: {
-		  type: String,
-		  required: true
-	  }
+    id: {
+      type: String,
+      required: true
+    }
   },
   data() {
     return {};
   },
-	methods: {
-		openCatModal(catId) {
-			console.log("catId: ", catId)
-			this.$router.push({name: "Description", params: { catId }})
-		}
-	}
+  methods: {
+    openCatModal(catId) {
+      console.log("catId: ", catId);
+      this.$router.push({ name: "Description", params: { catId } });
+    }
+  }
 };
 </script>
