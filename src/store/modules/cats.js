@@ -15,14 +15,11 @@ async function getCatDetails(cat) {
         url_wiki[url_wiki.length - 1]
       )
     );
-    const firstWikipediaItem = responseMedia.data.items[0]
+    const firstWikipediaItem = responseMedia.data.items[0];
     if (firstWikipediaItem && firstWikipediaItem.thumbnail) {
       details.thumbnail = firstWikipediaItem.thumbnail.source;
     }
-    if (
-	    firstWikipediaItem &&
-	    firstWikipediaItem.description
-    ) {
+    if (firstWikipediaItem && firstWikipediaItem.description) {
       details.description = firstWikipediaItem.description.text;
     }
   }
@@ -34,7 +31,12 @@ const state = {
 };
 
 const getters = {
-  cats: state => state.cats
+  cats: state => state.cats,
+  catById: (state) => (id) => {
+    return state.cats.find( cat => {
+      return cat.id === id
+    })
+  }
 };
 
 const actions = {
@@ -56,11 +58,10 @@ const actions = {
     ).then(catDetails => {
       if (catDetails) {
         catDetails.forEach((catDetail, index) => {
-          console.log("catDetial: ", catDetail)
           response.data[index].thumbnail = catDetail.thumbnail;
           response.data[index].descriptionFromWiki = catDetail.description;
         });
-	      commit("setCatsArray", response.data);
+        commit("setCatsArray", response.data);
       }
     });
   }

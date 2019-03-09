@@ -1,14 +1,14 @@
 <template>
   <v-card>
-    <v-img :src="thumbnail"/>
+    <v-img :src="thumbnail" />
     <v-card-title>
-      {{ breed }}
+      {{ name }}
     </v-card-title>
     <v-card-text>
-      {{origin}}
+      {{ origin }}
     </v-card-text>
     <v-card-actions>
-      <v-btn color="success" @click="">Details</v-btn>
+      <v-btn color="success" @click="openCatModal(id)">Details</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -17,25 +17,31 @@
 export default {
   name: "CatCard",
   props: {
-    breed: {
+    name: {
       type: String,
       required: true
     },
-	  thumbnail: {
+    thumbnail: {
+      type: String,
+      required: true
+    },
+    origin: {
+      type: String,
+      required: true
+    },
+	  id: {
 		  type: String,
 		  required: true
-	  },
-	  description: {
-		  type: String,
-		  required: true
-	  },
-	  origin: {
-		  type: String,
-		  required: true
-	  },
+	  }
   },
   data() {
     return {};
-  }
+  },
+	methods: {
+		openCatModal(catId) {
+			console.log("catId: ", catId)
+			this.$router.push({name: "Description", params: { catId }})
+		}
+	}
 };
 </script>

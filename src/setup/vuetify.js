@@ -12,7 +12,8 @@ import Vuetify, {
   VBtn,
   VContainer,
   VSpacer,
-  VImg
+  VImg,
+  VDialog
 } from "vuetify/lib";
 
 export default () => {
@@ -30,7 +31,8 @@ export default () => {
       VBtn,
       VContainer,
       VSpacer,
-      VImg
+      VImg,
+      VDialog
     }
   });
 };
