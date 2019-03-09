@@ -1,13 +1,15 @@
 <template>
-	<v-toolbar app>
+	<v-toolbar color="primary" app>
 		<v-toolbar-title class="headline text-uppercase">
-			<span class="font-weight-light">THE CAT WEBSITE</span>
+			<span style="color: white">THE CAT WEBSITE</span>
 		</v-toolbar-title>
 		<v-spacer></v-spacer>
 		<div style="width: 250px">
 			<v-select
 				:items="catOrigins"
 				label="Filtre"
+				dark
+				color="white"
 				@input="setCatOriginFilter"
 			></v-select>
 		</div>
