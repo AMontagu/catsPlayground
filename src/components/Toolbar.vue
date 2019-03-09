@@ -6,9 +6,11 @@
     <v-spacer></v-spacer>
     <div style="width: 250px">
       <v-select
+	      outline
         :items="catOrigins"
         label="Filtre"
         dark
+	      hide-details
         @input="setCatOriginFilter"
       ></v-select>
     </div>

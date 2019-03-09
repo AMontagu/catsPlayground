@@ -40,7 +40,7 @@ export default () => {
     theme: {
       primary: "#3494C0",
       secondary: "#4479FF",
-      third: "#435CC1"
+      third: "#1E90FF"
     }
   });
 };
