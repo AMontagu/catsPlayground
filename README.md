@@ -1,6 +1,11 @@
 # cats
 
 ## Project setup
+
+- Copy the env.save file to .env
+- Edit your .env file to set `VUE_APP_API_KEY` variable (if you do not have one please visit https://thecatapi.com/)
+- Install your dependencies
+
 ```
 yarn install
 ```

@@ -35,7 +35,7 @@ export default () => {
       VSpacer,
       VImg,
       VDialog,
-	    VProgressCircular,
+      VProgressCircular
     },
     theme: {
       primary: "#3494C0",
