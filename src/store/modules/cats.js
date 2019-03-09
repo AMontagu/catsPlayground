@@ -28,7 +28,7 @@ async function getCatDetails(cat) {
 
 const state = {
   cats: [],
-  originFilter: null,
+  originFilter: null
 };
 
 const getters = {
@@ -79,7 +79,7 @@ const mutations = {
   setCatsArray(state, cats) {
     state.cats = cats;
   },
-	setCatOriginFilter(state, filter) {
+  setCatOriginFilter(state, filter) {
     state.originFilter = filter;
   }
 };

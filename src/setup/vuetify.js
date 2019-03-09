@@ -1,5 +1,5 @@
 import Vue from "vue";
-import 'vuetify/dist/vuetify.min.css';
+import "vuetify/dist/vuetify.min.css";
 import Vuetify, {
   VApp, // required
   VNavigationDrawer,
@@ -35,10 +35,10 @@ export default () => {
       VImg,
       VDialog
     },
-	  theme: {
-		  primary: '#3494C0',
-		  secondary: '#4479FF',
-		  third: '#435CC1',
-	  },
+    theme: {
+      primary: "#3494C0",
+      secondary: "#4479FF",
+      third: "#435CC1"
+    }
   });
 };

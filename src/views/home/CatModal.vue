@@ -1,17 +1,22 @@
 <template>
   <v-dialog :max-width="maxWidth" :value="currentCat" @input="goToHome">
     <v-card>
-      <v-layout column>
-        <v-flex xs4>
-          <v-img :src="currentCat.thumbnail" />
+      <v-layout
+        :row="$vuetify.breakpoint.smAndUp"
+        :column="$vuetify.breakpoint.xsOnly"
+      >
+        <v-flex xs4 pa-3>
+          <v-img :src="currentCat.thumbnail" height="200" contain />
         </v-flex>
-        <v-flex x8>
-          <v-layout row>
+        <v-flex x8 pa-3>
+          <v-layout column>
             <v-flex xs12>
-              {{ currentCat.name }}
+              <h1 style="font-size: 5vh">{{ currentCat.name }}</h1>
             </v-flex>
-            <v-flex xs12>
-              {{ currentCat.descriptionFromWiki }}
+            <v-flex xs12 mt-3>
+              <p style="font-size: 1.55vh">
+                {{ currentCat.descriptionFromWiki }}
+              </p>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -28,7 +33,7 @@ export default {
   props: {
     maxWidth: {
       type: String,
-      default: "500px"
+      default: "70%"
     },
     catId: {
       type: String,
@@ -41,6 +46,10 @@ export default {
   computed: {
     ...mapGetters("cats/", ["catById"]),
     currentCat() {
+      const cat = this.catById(this.catId);
+      if (!cat) {
+        return false;
+      }
       return this.catById(this.catId);
     }
   },
