@@ -9,7 +9,6 @@
         :items="catOrigins"
         label="Filtre"
         dark
-        color="white"
         @input="setCatOriginFilter"
       ></v-select>
     </div>
