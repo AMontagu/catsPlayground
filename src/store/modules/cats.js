@@ -40,7 +40,6 @@ const getters = {
   },
   catOrigins: state => [...new Set(state.cats.map(item => item.origin))],
   catByOrigin: state => {
-    console.log("icic", state.originFilter);
     if (!state.originFilter) {
       return state.cats;
     }

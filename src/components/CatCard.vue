@@ -1,14 +1,16 @@
 <template>
-  <v-card>
-    <v-img :src="thumbnail" />
-    <v-card-title>
-      {{ name }}
+  <v-card elevation="5">
+    <v-img :src="thumbnail" height="200" contain/>
+    <v-card-title primary-title>
+	    <div>
+		    <h3 class="headline mb-0">{{ name }}</h3>
+		    <p>{{ origin }}</p>
+	    </div>
     </v-card-title>
-    <v-card-text>
-      {{ origin }}
-    </v-card-text>
     <v-card-actions>
-      <v-btn color="success" @click="openCatModal(id)">Details</v-btn>
+	    <v-layout justify-end>
+		    <v-btn flat color="secondary" @click="openCatModal(id)">Details</v-btn>
+	    </v-layout>
     </v-card-actions>
   </v-card>
 </template>
