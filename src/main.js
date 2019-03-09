@@ -2,6 +2,9 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import setupVuetify from './setup/vuetify';
+
+setupVuetify();
 
 Vue.config.productionTip = false;
 
