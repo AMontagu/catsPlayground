@@ -14,7 +14,8 @@ import Vuetify, {
   VContainer,
   VSpacer,
   VImg,
-  VDialog
+  VDialog,
+  VProgressCircular
 } from "vuetify/lib";
 
 export default () => {
@@ -33,7 +34,8 @@ export default () => {
       VContainer,
       VSpacer,
       VImg,
-      VDialog
+      VDialog,
+	    VProgressCircular,
     },
     theme: {
       primary: "#3494C0",
